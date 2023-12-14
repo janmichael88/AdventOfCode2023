@@ -25,7 +25,7 @@ import java.util.Deque;
 
 public class Part1 {
     public static void main(String[] args) throws IOException{
-        String file_path = "input.txt";
+        String file_path = "test_input.txt";
         /*    
         we need to to find the reflections in each pattern
         idea is that each reflection line should be a palindrome
@@ -38,18 +38,66 @@ public class Part1 {
             if we get to the bottom, we can expand out pointers
         its just the oppostie for horizontal
          */
+        List<String> lines = getLines(file_path);
+        List<char[][]> patterns = getPatterns(lines);
+        char[][] test_pattern = patterns.get(0);
 
     }
     public static List<String> getLines(String filepath) throws FileNotFoundException, IOException{
         List<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
             String line;
+            //process each
             while ((line = reader.readLine()) != null) {
-                //System.out.println(line);
                 lines.add(line);
             }
         }
         return lines;
     }
+
+    public static boolean testCol(char[][], int col)
+
+    public static List<char[][]> getPatterns(List<String> lines){
+        List<char[][]> patterns = new ArrayList<>();
+        List<char[]> curr_pattern = new ArrayList<>();
+        for (int i = 0; i < lines.size(); i++){
+            String curr_line = lines.get(i);
+            if (!curr_line.trim().isEmpty()){
+                curr_pattern.add(curr_line.toCharArray());
+            }
+                
+            else{
+                //process curr_pattern
+                int rows = curr_pattern.size();
+                int cols = curr_pattern.get(0).length;
+                char[][] converted_pattern = new char[rows][cols];
+                for (int j = 0; j < rows; j++){
+                    for (int k = 0; k < cols; k++ ){
+                        converted_pattern[j][k] = curr_pattern.get(j)[k];
+                    }
+                }
+                patterns.add(converted_pattern);
+                //clear
+                curr_pattern.clear();
+
+            }
+        }
+        int rows = curr_pattern.size();
+        int cols = curr_pattern.get(0).length;
+        char[][] converted_pattern = new char[rows][cols];
+        for (int j = 0; j < rows; j++){
+            for (int k = 0; k < cols; k++ ){
+                converted_pattern[j][k] = curr_pattern.get(j)[k];
+            }
+        }
+        patterns.add(converted_pattern);
+        //clear
+        curr_pattern.clear();
+        
+
+        return patterns;
+    }
+
+
 }
 
