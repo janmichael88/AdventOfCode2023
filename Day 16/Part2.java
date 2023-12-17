@@ -23,6 +23,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedHashMap;
 
+
 public class Part2 {
     public static void main(String[] args) throws IOException{
         /*
@@ -108,7 +109,6 @@ public class Part2 {
                 }
                 else if (curr_char == '/'){
                     q.add(step(DR,DC,sr,sc,mapp1.get(sd)));
-
                 }
                 else if (curr_char == '\\'){
                     q.add(step(DR,DC,sr,sc,mapp2.get(sd)));
@@ -209,7 +209,6 @@ public class Part2 {
                     int[] next_entry = {neigh_x,neigh_y,1,0};
                     q.add(next_entry);
                 }
-
                 //now '\'
                 else if (grid[neigh_x][neigh_x] == '\\' && (dx == 1)){
                     //approach from right
@@ -236,15 +235,9 @@ public class Part2 {
                     int[] next_entry = {neigh_x,neigh_y,dx,dy};
                     q.add(next_entry);
                 }
-
-
-
             }
 
-
-
         }
-
 
     }
     public static List<String> getLines(String filepath) throws FileNotFoundException, IOException{
