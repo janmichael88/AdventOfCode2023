@@ -30,6 +30,11 @@ public class Part2{
          * we need to do edge contraction, and prune the serach in order for naive dfs to work
          * basically we only need to dfs on a node that has two neighbords only
          * you basically dont need to explore all paths, which is kinda of a dumb huertistic
+         * 
+         * intuition, instead of falling each node in one step, just walk all the way down the hallway until we hit a wall
+         * check out these
+         * https://topaz.github.io/paste/#XQAAAQC8BwAAAAAAAAAzHIoib6pMX4ickc1Mep93pgqtuV6rGB3/t2SKtfp5xR3hNc6GRwmjRXNiUgRBiz4gFYkm4PrDS5YAxmO7eRj0qI9WyrszuxCe5V1RunBfyr8VIAwoxnksvb1DP/q8kIGgUA9gU9ht9UlqwOpKowGq1ze7AeH+5W+hzsUODbIv3ghhuAzq3Zcv19ryiQfZoInKKPON10liefoJhvQ1XATcBp8tL9BHAxONfM0+kOJf23k3cZzpIz1oJQuPJJVjyjY5SMnwz1K7ySs62dHi+2bJXvJUGNdYv32gP7JOB9hb3XT5ONoAYpkB2Juy8dhNrcwWhj6Ql3ZiSRpjtim2gSNq1jJomI7zPDsodf03LJZM4SCC1Yc3v/xi04qi2wzEwVG21UCFVv4nz0dCvyHdsrpCNyjlWtl0AwRBVwyQDZ7UHNO6YGYoiwzzW2ghlHKCgW1SM058zH79USkE2W/+I+kqQ1o5KiuOnS3EGdH6g8+mJ0Bqg1PBUaQXuOlKSn6jgmQh53OOl2W5vs4ndO532WyeWtrIaI0cGCpRH6YnYlGJirUt8hBmYWVPn7Rnn8YHcxW17GxsqIz9h3ehs7+U7ajdSs5PC8gTCrHM6uFy0cpx0srOJ68Q4nrI7Fpi4dz9fEGFLDlMMwmKeKonEfWZtSA1+1wW0B8dhZ++qq5XDhXionVoPV/GBu8v6HY1MRthRuUq8WV8Fca02Jx1YMdzJ3zVf+kC61ImSbE0QXvXIafQwIRMtykD7zyHUjFHxC978WCauNuM5SWGECAA2ZvRjJGioKX24uxK74ofkn0cbBeg3RF76DGj6Fgf3JqtbyaQ8/82DNV7mlXIhUFnIE3dECjs3iMk0pazxvj7uedD4bulIxakNaW1xCcaobo/DW+jJJNd9n1jLc7UlSyd1SSwyLpFGwyNKrvIeey80YUen8ohK4CNOgEtqYwas5SqyVcq2ylwfFnStOPpF3H6oIU1TE2/MQMdFI28qTIL0j13OBcMLN/Sv92bGMXyfIcnkG5X77OfOlyt/vrH+0I=
+         * https://gist.github.com/qwewqa/00d8272766c2945f4aa965ea36dba7f5
          */
         String file = "test_input.txt";
         List<String> lines = getLines(file);
