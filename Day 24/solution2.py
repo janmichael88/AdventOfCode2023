@@ -73,4 +73,6 @@ for idx,shard in enumerate(shards[:3]):
 
 #To my great shame, I don't really know how this works under the hood.
 result = solve_poly_system(equations,*([x,y,z,vx,vy,vz]+t_syms))
+print(len(result))
+print(result)
 print(result[0][0]+result[0][1]+result[0][2]) #part 2 answer
