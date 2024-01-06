@@ -1,4 +1,6 @@
+#https://github.com/mebeim/aoc/blob/master/2023/solutions/day19.py
 from math import prod
+
 with open("input.txt") as fin:
     raw_workflows, raw_variables = fin.read().split('\n\n')
 
